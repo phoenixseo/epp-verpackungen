@@ -1,9 +1,0 @@
-[core]
-	repositoryformatversion = 0
-	filemode = true
-	bare = false
-	logallrefupdates = true
-	precomposeunicode = true
-[remote "origin"]
-	url = git@github.com:phoenixseo/epp-verpackungen.git
-	fetch = +refs/heads/*:refs/remotes/origin/*
