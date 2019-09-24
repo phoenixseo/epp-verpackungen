@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /usr/bin/bash
 # Drupal 8 Production Environment Rebuild Script
 # Taken from great work of:
 # https://github.com/thom44/deployment/blob/master/deployment/prod-rebuild.sh
