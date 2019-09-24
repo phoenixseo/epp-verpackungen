@@ -28,7 +28,6 @@ DRUPAL_DIR=web
 # Check absolute path
 # This Script sits in project/deployment/
 PROJECT_PATH=$(pwd)
-echo "projekt-path = $PROJECT_PATH"
 
 DRUPAL_ROOT=$PROJECT_PATH/$DRUPAL_DIR
 
@@ -47,14 +46,17 @@ now=$(date +"%d_%m_%Y__%H_%M_%S")
 logfile=$PROJECT_PATH/deployment/$LOG_DIR/prod-rebuild-$now.log
 
 echo "Time is $now"   2>&1 | tee -a $logfile
+echo "Project Path is $PROJECT_PATH" 2>&1 | tee -a $logfile
 echo "Drupal Root is $DRUPAL_ROOT"  2>&1 | tee -a $logfile
+
 echo "Logfile is $logfile"
 
 
 
 ### GIT PULL via Plesk Onyx #########################################
 # git pull is done automatically via push from origin (github)
-# this script is called after that.
+# via webhook settings in github and plesk repository settings.
+# this script is called after "git pull origin master".
 #
 
 # call composer install
