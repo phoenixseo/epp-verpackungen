@@ -42,9 +42,9 @@ if [ ! -d $PROJECT_PATH/deployment/$LOG_DIR ]; then
     chmod 700 $PROJECT_PATH/deployment/$LOG_DIR
 fi
 
-logfile=$PROJECT_PATH/deployment/$LOG_DIR/prod-rebuild-$now.log
-
 now=$(date +"%d_%m_%Y__%H_%M_%S")
+
+logfile=$PROJECT_PATH/deployment/$LOG_DIR/prod-rebuild-$now.log
 
 echo "Time is $now"   2>&1 | tee -a $logfile
 echo "Drupal Root is $DRUPAL_ROOT"  2>&1 | tee -a $logfile
