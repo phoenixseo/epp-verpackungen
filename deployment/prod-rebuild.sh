@@ -34,7 +34,6 @@ DRUPAL_ROOT=$PROJECT_PATH/$DRUPAL_DIR
 
 
 ### Setup automatic Logging of Script Runs #####################################
-now=$(date +"%d_%m_%Y__%H_%M_%S")
 
 LOG_DIR=logs
 
@@ -44,6 +43,8 @@ if [ ! -d $PROJECT_PATH/deployment/$LOG_DIR ]; then
 fi
 
 logfile=$PROJECT_PATH/deployment/$LOG_DIR/prod-rebuild-$now.log
+
+now=$(date +"%d_%m_%Y__%H_%M_%S")
 
 echo "Time is $now"   2>&1 | tee -a $logfile
 echo "Drupal Root is $DRUPAL_ROOT"  2>&1 | tee -a $logfile
@@ -57,8 +58,12 @@ echo "Logfile is $logfile"
 #
 
 # call composer install
+now=$(date +"%d_%m_%Y__%H_%M_%S")
+
 echo "Begin composer install: $now" 2>&1 | tee -a $logfile
 /opt/plesk/php/7.3/bin/php /usr/lib64/plesk-9.0/composer.phar install 2>&1 | tee -a $logfile
+
+now=$(date +"%d_%m_%Y__%H_%M_%S")
 echo "End composer install: $now" 2>&1 | tee -a $logfile
 
 # end of line.
