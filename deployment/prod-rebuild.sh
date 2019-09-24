@@ -27,8 +27,8 @@ DRUPAL_DIR=web
 
 # Check absolute path
 # This Script sits in project/deployment/
-cd ..
 PROJECT_PATH=$(pwd)
+echo "projekt-path = $PROJECT_PATH"
 
 DRUPAL_ROOT=$PROJECT_PATH/$DRUPAL_DIR
 
