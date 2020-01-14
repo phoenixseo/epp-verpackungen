@@ -50,6 +50,9 @@
 # drush: stuff für tool "drush", nicht zwingend erforderlich zu haben.
 /drush/contrib/
 
+# deployment: script after git-pull
+# /deployment/logs*
+
 # private: verzeichnis für private dateien
 /private/*
 
