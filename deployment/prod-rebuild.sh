@@ -42,7 +42,7 @@ if [ ! -d $PROJECT_PATH/deployment/$LOG_DIR ]; then
 fi
 
 #now=$(date +"%d_%m_%Y__%H_%M_%S")
-now=$(date + "%Y\-%m\-%d\-\-%H\-%M\-%S")
+now=$(date + "%Y_%m_%d__%H_%M_%S")
 
 logfile=$PROJECT_PATH/deployment/$LOG_DIR/prod-rebuild-$now.log
 
@@ -61,12 +61,12 @@ echo "Logfile is $logfile"
 #
 
 # call composer install
-now=$(date + "%Y\-%m\-%d\-\-%H\-%M\-%S")
+now=$(date + "%Y_%m_%d__%H_%M_%S")
 
 echo "Begin composer install: $now" 2>&1 | tee -a $logfile
 /opt/plesk/php/7.3/bin/php /usr/lib64/plesk-9.0/composer.phar install 2>&1 | tee -a $logfile
 
-now=$(date + "%Y\-%m\-%d\-\-%H\-%M\-%S")
+now=$(date + "%Y_%m_%d__%H_%M_%S")
 echo "End composer install: $now" 2>&1 | tee -a $logfile
 
 # end of line.
